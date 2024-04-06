@@ -1,0 +1,31 @@
+<!-- 202135973 백지연 -->
+<div class="container">	
+    <h2><%=title%>></h2>
+	<form action="/code/<%=formType%>_process" method="post" >
+		<div class="mb-3">
+			<label class="form-label" for="id" <%-labelType%> ">대분류</label> 
+			<input class="form-control" type="<%=type%>" name="main_id" placeholder="0000" style = "width:300px;" value="<%=list[0].main_id%>" />
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="id">대분류명</label> 
+			<input class="form-control" type="text" name="main_name" style = "width:300px;" value="<%=list[0].main_name%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="id" <%-labelType%> >소분류</label> 
+			<input class="form-control" type="<%=type%>" name="sub_id" style="width:300px;" value="<%=list[0].sub_id%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="id">소분류명</label> 
+			<input class="form-control" type="text" name="sub_name" style="width:300px;" value="<%=list[0].sub_name%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="id">시작일</label> 
+			<input class="form-control" type="text" name="start" id="start" style="width:300px;" value="<%=list[0].start%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="id">종료일</label> 
+			<input class="form-control" type="text" name="end" id="end" style="width:300px;" value="<%=list[0].end%>"/>
+		</div>
+        <button class="btn btn-outline-primary btn-sm" type="submit">입력</button>
+  </form>
+</div>

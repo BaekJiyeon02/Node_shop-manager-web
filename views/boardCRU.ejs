@@ -1,0 +1,46 @@
+<!-- 202135973 백지연 -->
+<div class="container">	
+	
+    
+    <h2><%=title%></h2>
+	<form action="<%=btn.location%>" method="<%=btn.method%>" >
+        <input type = "hidden" name="type_id" value = "<%=btname[0].type_id%>">
+        <input type = "hidden" name="loginid" value = "<%=loginid%>">
+		<%if(!(title=='생성')){%>
+        <input type = "hidden" name="board_id" value = "<%=list[0].board_id%>">
+		<%}%>
+		<div class="mb-3">
+			<label class="form-label" for="id">제목</label> 
+			<input class="form-control" type="text" name="title" style = "width:300px;" value="<%=list[0].title%>" <%=disabledOption%>/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="id">작성자</label> 
+			<input class="form-control" type="text" name="writer" value = "<%=writer%>" style = "width:300px;" disabled/>
+		</div>
+		<%if (title=='수정' || title=="상세보기"){%>
+		<div class="mb-3">
+			<label class="form-label" for="id">작성일</label> 
+			<input class="form-control" type="text" name="writer" value = "<%=list[0].date%>" style = "width:300px;" disabled/>
+		</div>
+		<%
+	}
+		%>
+        <div class="mb-3">
+			<label class="form-label" for="id">내용</label> 
+			<textarea class="form-control" name="content" list style = "width:800px;height: 200px;" <%=disabledOption%>><%=list[0].content%></textarea>
+		</div>
+		<%
+		if((sessionClass=='01' && title=='상세보기') || (title=='상세보기' && loginid==sessionId)){
+			%>
+
+			<a type="button" href="/board/view/<%=btname[0].type_id%>/1" class="btn btn-outline-primary btn-sm">목록</a>
+			<a type="button" href="/board/update/<%=btname[0].type_id%>/<%=list[0].board_id%>" class="btn btn-outline-primary btn-sm">수정</a>
+			<a type="button" href="/board/delete/<%=btname[0].type_id%>/<%=list[0].board_id%>" class="btn btn-outline-primary btn-sm"onclick='if(confirm("정말로 삭제하시겠습니까?")==false){ return false }'>삭제</a>
+			<%
+		}
+		else{
+		%>
+        <button class="btn btn-outline-primary btn-sm" type="submit"><%=btn.name%></button>
+		<%}%>
+  </form>
+</div>

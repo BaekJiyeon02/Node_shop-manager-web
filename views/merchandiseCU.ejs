@@ -1,0 +1,61 @@
+<!-- 202135973 백지연 -->
+
+<div class="container">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+
+		function displayFileName() {
+			var fileName = $("#file").val();
+			$(".upload-name").val(fileName);
+		}
+	</script>
+	<h2>
+		<%= title %>
+	</h2>
+
+	<form action="/merchandise/<%=formType%>_process" method="post" enctype="multipart/form-data">
+		<div class="mb-3">
+			<label class="form-label" for="id">카테고리</label>
+			<select name="category" id="id">
+				<%-category %>
+			</select>
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">제품명</label>
+			<input class="form-control" type="text" name="name" style="width:300px;" value="<%=list[0].name%>" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">가격</label>
+			<input class="form-control" type="number" name="price" style="width:300px;" value="<%=list[0].price%>" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">재고</label>
+			<input class="form-control" type="number" name="stock" style="width:300px;" value="<%=list[0].stock%>" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">브랜드</label>
+			<input class="form-control" type="text" name="brand" style="width:300px;" value="<%=list[0].brand%>" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">공급자</label>
+			<input class="form-control" type="text" name="supplier" style="width:300px;"
+				value="<%=list[0].supplier%>" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">할인여부</label>
+			<input class="form-control" type="text" name="sale_yn" style="width:300px;" value="<%=list[0].sale_yn%>" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="id">할인가격</label>
+			<input class="form-control" type="number" name="sale_price" style="width:300px;"
+				value="<%=list[0].sale_price%>" />
+		</div>
+
+		<div class="mb-3">
+			<input class="upload-name" value="<%=list[0].image%>" name="image" placeholder="이미지파일">
+			<input type="file" id="file" name="uploadFile" onchange="displayFileName()">
+		</div>
+		<input type="hidden" name="mer_id" value="<%=list[0].mer_id%>" />
+		<button class="btn btn-outline-primary btn-sm" type="submit">입력</button>
+	</form>
+</div>

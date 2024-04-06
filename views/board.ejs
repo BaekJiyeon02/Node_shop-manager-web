@@ -1,0 +1,20 @@
+<!-- 202135973 백지연 -->
+
+<table class="table table-bordered border-primary"> 
+    <%-tableData%>
+</table>
+<% var j = 1;
+while (j <= totalPages) {
+    if(j == pNum){ %>
+    <span style="font-weight : bold;"><%=j%></span> &nbsp;&nbsp;
+    <% } else { %>
+    <span><a href="/board/view/<%=btname[1][0].type_id%>/<%=j%>"><%=j%></a></span> &nbsp;&nbsp;
+<% }
+j++
+} 
+if(btnYN){
+%>
+<a type="button" href="/board/create/<%=btname[1][0].type_id%>" class="btn btn-info me-md-2">글쓰기</a>
+<%
+}
+%>

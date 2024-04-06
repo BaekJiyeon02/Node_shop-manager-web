@@ -1,0 +1,41 @@
+<!--202135973 백지연-->
+<div class="container">	
+	<h2><%=title%></h2>
+	<form action="<%=actionLocation%>" method="post" >
+		<div class="mb-3">
+			<label class="form-label" for="id">아이디</label>
+			<input class="form-control" type="text" name="id" id="id" style="width:300px;" value="<%=list[0].loginid%>" <%=lockOption%>/>
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="pwd">비밀번호</label> 
+			<input class="form-control" type="password" name="pwd" id="pwd" style="width:300px;"  value="<%=list[0].password%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="name">이름</label> 
+			<input class="form-control" type="text" name="name" id="name" style="width:300px;"  value="<%=list[0].name%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="address">주소</label> 
+			<input class="form-control" type="text" name="add" id="add" style="width:300px;" value="<%=list[0].address%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="tel">전화번호</label> 
+			<input class="form-control" type="text" name="tel" id="tel" style="width:300px;" placeholder="ex)010-1111-1111" value="<%=list[0].tel%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="birth">생년월일 6자리</label>
+			<input class="form-control" type="text" name="birth" id="birth" style="width:300px;" placeholder="ex)20230101"  value="<%=list[0].birth%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="class">클래스</label>
+			<input class="form-control" type="text" name="class" id="class" style="width:300px;"   value="<%=list[0].class%>"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="point">포인트</label>
+			<input class="form-control" type="text" name="point" id=point" style="width:300px;" placeholder="ex)20230101"  value="<%=list[0].point%>"/>
+		</div>
+        <br>
+    <button class="btn btn-outline-primary btn-sm" type="submit">완료</button>
+  </form>
+</div>
+

@@ -1,0 +1,34 @@
+<!--202135973 백지연-->
+<div class="container">	
+	<h2>회원가입</h2>
+	<form action="/auth/join_process" method="post" >
+		<div class="mb-3">
+			<label class="form-label" for="id">아이디</label>
+             <!-- <button class="btn btn-outline-primary btn-sm" onclick>중복확인</button> -->
+			<input class="form-control" type="text" name="id" id="id" style="width:300px;" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="pwd">비밀번호</label> 
+			<input class="form-control" type="password" name="pwd" id="pwd" style="width:300px;"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="name">이름</label> 
+			<input class="form-control" type="text" name="name" id="name" style="width:300px;"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="address">주소</label> 
+			<input class="form-control" type="text" name="add" id="add" style="width:300px;"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="tel">전화번호</label> 
+			<input class="form-control" type="text" name="tel" id="tel" style="width:300px;" placeholder="ex)010-1111-1111"/>
+		</div>
+        <div class="mb-3">
+			<label class="form-label" for="birth">생년월일 6자리</label>
+			<input class="form-control" type="text" name="birth" id="birth" style="width:300px;" placeholder="ex)20230101"/>
+		</div>
+        <br>
+    <button class="btn btn-outline-primary btn-sm" type="submit">회원가입</button>
+  </form>
+</div>
+
